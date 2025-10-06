@@ -4,15 +4,16 @@
 from utils.segmentation import *
 from glob import glob
 from webcolors import rgb_to_hex
-from webcolors import (
-    CSS3_HEX_TO_NAMES,
-    hex_to_rgb,
-)
+from webcolors import CSS3_NAMES_TO_HEX, hex_to_rgb
 from scipy.spatial import KDTree
 
 import cv2
 import numpy as np
 import os 
+
+
+
+CSS3_HEX_TO_NAMES = {v: k for k, v in CSS3_NAMES_TO_HEX.items()}
 
 def extract_images(video_path, output_folder, n_seconds):
     # Ouvrir la vidéo
